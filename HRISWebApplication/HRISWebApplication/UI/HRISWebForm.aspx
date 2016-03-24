@@ -63,7 +63,7 @@
          <tr>
             
             <td>
-                <asp:GridView ID="displayGridView" runat="server"></asp:GridView>
+                <asp:GridView ID="displayGridView" runat="server" AutoGenerateEditButton="True"></asp:GridView>
             </td>
         </tr>
         </table>
