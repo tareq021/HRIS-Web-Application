@@ -62,8 +62,37 @@
         <table>
          <tr>
             
-            <td>
-                <asp:GridView ID="displayGridView" runat="server" AutoGenerateEditButton="True"></asp:GridView>
+            <td colspan="2">
+                <asp:GridView ID="displayGridView" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+
+                        <asp:TemplateField HeaderText ="Name">
+                            <ItemTemplate>
+                                <%#Eval("Name") %>
+                            </ItemTemplate>
+                            </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText ="ID">
+                            <ItemTemplate>
+                                <%#Eval("ID") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText ="Department">
+                            <ItemTemplate>
+                                <%#Eval("DepartmentID") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                                <asp:HyperLink runat="server" NavigateUrl ='<%# String.Concat("~/UI/HRISWebForm.aspx?id=", Eval("Id") ) %>' Text="Edit"></asp:HyperLink>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    
+                    </Columns>
+
+                </asp:GridView>
             </td>
         </tr>
         </table>
